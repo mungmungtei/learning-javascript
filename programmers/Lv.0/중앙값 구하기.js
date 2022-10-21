@@ -7,13 +7,13 @@
 // 예를 들어 배열 [1, 2, 7, 10, 11, 20] -> [ 1, 10, 11, 2, 20, 7 ] 로 정렬됨
 
 // 그래서 아래 코드로 했을 때 정확점 44점 나옴..
-// function solution(array) {
-//     array.sort();
-//     let centerIndex = Math.floor(array.length / 2);
-//     return array[centerIndex];
-// }
+function solution(array) {
+  array.sort();
+  let centerIndex = Math.floor(array.length / 2);
+  return array[centerIndex];
+}
 
-// 그래서 비교함수를 써줘야 함!
+// 숫자 배열에 sort 메서드를 쓰려면 비교함수를 써줘야 함!
 function solution(array) {
   array.sort(function (a, b) {
     return a - b;

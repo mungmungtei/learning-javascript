@@ -2,3 +2,30 @@
 // 피자를 나눠먹을 사람의 수 n이 매개변수로 주어질 때,
 // n명이 주문한 피자를 남기지 않고 모두 같은 수의 피자 조각을 먹어야 한다면
 // 최소 몇 판을 시켜야 하는지를 return 하도록 solution 함수를 완성해보세요.
+
+function solution(n) {
+  let min = 0;
+  for (let i = 6; i > 0; i--) {
+    if (n % i === 0 && 6 % i === 0) {
+      min = i * (n / i) * (6 / i);
+      break;
+    }
+  }
+  return min / 6;
+}
+
+// 다른 사람 풀이 (훨씬 간결하다)
+function solution(n) {
+  let answer = 6;
+  while (true) {
+    if (answer % n === 0) {
+      break;
+    }
+    answer += 6;
+  }
+  return answer / 6;
+}
+
+console.log(solution(6)); // 1
+console.log(solution(10)); // 5
+console.log(solution(4)); // 2

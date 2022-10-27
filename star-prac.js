@@ -49,3 +49,12 @@ for (let i = 4; i >= -4; i -= 2) {
 // *****
 //  ***
 //   *
+
+for (let i = 4; i >= -4; i -= 2) {
+  console.log(" ".repeat(Math.abs(i)) + "*".repeat(5 - Math.abs(i)));
+}
+//      *
+//    ***
+//  *****
+//    ***
+//      *
